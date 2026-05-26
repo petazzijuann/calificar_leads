@@ -30,6 +30,7 @@ WEBHOOK_SECRET = os.environ.get("TELEGRAM_WEBHOOK_SECRET", "")
 
 
 @app.route("/api/webhook", methods=["POST"])
+@app.route("/", methods=["POST"])
 def webhook():
     chat_id = None  # necesario para el bloque de error final
 
