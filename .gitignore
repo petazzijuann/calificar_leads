@@ -1,0 +1,36 @@
+# Variables de entorno (NUNCA subir al repo)
+.env
+.env.local
+*.json.key
+
+# Credenciales de Google (si alguien las baja localmente)
+*credentials*.json
+*service-account*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/
