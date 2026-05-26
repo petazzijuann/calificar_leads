@@ -11,8 +11,7 @@ WELCOME_MESSAGE_TEMPLATE = (
     "<i>\"Empresa de consultoría en Madrid, 12 empleados, están buscando automatizar "
     "su proceso de onboarding con IA. Hablaron con nosotros hace 3 días.\"</i>\n\n"
     "🎯 <b>Te digo si el lead es:</b>\n"
-    "🟢 Calificado Alto — encaja perfecto con el ICP\n"
-    "🟡 Calificado Medio — hay potencial pero con gaps\n"
+    "🟢 Calificado — encaja con el ICP\n"
     "🔴 No Calificado — no es el momento\n"
     "⚠️ Incompleto — te pido los datos que faltan\n\n"
     "¡Mandame tu primer lead cuando quieras!"
@@ -61,19 +60,11 @@ def format_telegram_response(result: dict) -> str:
 
     footer = f"\n\n<i>⏱ Analizado en {elapsed}s</i>" if elapsed else ""
 
-    if decision == "CALIFICADO_ALTO":
+    if decision == "CALIFICADO":
         return (
-            f"🟢 <b>Lead Calificado — ALTO</b>\n\n"
+            f"🟢 <b>Lead Calificado</b>\n\n"
             f"📋 <b>Análisis:</b>\n{razonamiento}\n\n"
             f"✅ Este lead encaja con tu ICP. ¡Vale la pena avanzar!"
-            f"{footer}"
-        )
-
-    if decision == "CALIFICADO_MEDIO":
-        return (
-            f"🟡 <b>Lead Calificado — MEDIO</b>\n\n"
-            f"📋 <b>Análisis:</b>\n{razonamiento}\n\n"
-            f"⚠️ Cumple la mayoría del ICP pero hay puntos a confirmar."
             f"{footer}"
         )
 
